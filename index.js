@@ -29,5 +29,5 @@ function getPlayerChoice() {
 }
 
 function playRound(playerSelection, computerSelection){
-    
+
 }
