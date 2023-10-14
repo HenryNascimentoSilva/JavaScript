@@ -1,82 +1,73 @@
-function getChoice(choice){
-    switch(choice){
-        case 1:
-            choice = "rock";
-            break;
-        case 2:
-            choice = "paper";
-            break;
-        case 3:
-            choice = "scissors";
-            break;
-    }
+function getComputerChoice(){
+    const choice = Math.floor(Math.random() * 3) + 1;
     return choice;
 }
 
-function getComputerChoice() {
-        const computerChoice = Math.floor(Math.random() *3) + 1;
-        return getChoice(computerChoice);
-}
-
-function getPlayerChoice() {
-    const choice = parseInt(prompt("Choose 1 for rock, 2 for paper and 3 for scissors."));
-    if (choice >= 0 && choice <= 3){
-        return getChoice(choice);
-    }
-    else{
-        return console.error("Erro");
-    }
-}
-
-function playRound(){
-    const playerSelection = getPlayerChoice();
-    const computerSelection = getComputerChoice();
-
+function playRound(playerSelection, computerSelection){
+    
     switch (playerSelection){
-        case "rock":
-            if (computerSelection == "rock"){
-                const result = console.log("Draw!");
-                break;
+
+        case 1:
+
+            if (computerSelection == 1){
+                return "Draw";
             }
             
-            else if (computerSelection == "paper"){
-                const result = console.log("Computer wins!");
-                break;
+            else if (computerSelection == 2){
+                return "Computer wins!";
+
             }
             
             else {
-                const result = console.log ("You won!");
-                break;
-            }
-        case "paper":
-            if (computerSelection == "rock"){
-                const result = console.log("You won!");
-                break;
+                return "You won!";
             }
 
-            else if (computerSelection == "paper"){
-                const result = console.log("Draw!");
-                break;
+        case 2:
+
+            if (computerSelection == 1){
+                return "You won!";
             }
 
-            else {
-                const result = console.log("Computer wins!");
-                break;
-            }
-        case "scissors":
-            if (computerSelection == "rock"){
-                const result = console.log("Computer wins!");
-                break;
-            }
-
-            else if (computerSelection == "paper"){
-                const result = console.log("You won!");
+            else if (computerSelection == 2){
+                return "Draw!";
             }
 
             else {
-                const result = console.log("Draw!");
-                break;
+                return "Computer wins!";
+            }
+
+        case 3:
+
+            if (computerSelection == 3){
+                return "Computer wins!";
+            }
+
+            else if (computerSelection == 2){
+                return "You won!";
+            }
+
+            else {
+                return "Draw!";
+
             }
     }
 }
-playRound();
+
+
+
+function game(){
+    for(let i = 0; i < 5; i++){
+        playerSelection = parseInt(prompt("Rock, Paper, Scissors! \n Choose -1(Rock), 2-(Paper), 3-(Scissors)"));
+        computerSelection = getComputerChoice()
+        if (playerSelection > 0 && playerSelection < 4){
+            console.log(playRound(playerSelection, computerSelection));
+        }
+        else {
+            console.error("number not in 1, 2 or 3");
+            break;
+        }
+    }
+}
+
+game();
+
