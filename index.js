@@ -14,12 +14,12 @@ function getChoice(choice){
 }
 
 function getComputerChoice() {
-        let computerChoice = Math.floor(Math.random() *3) + 1;
+        const computerChoice = Math.floor(Math.random() *3) + 1;
         return getChoice(computerChoice);
 }
 
 function getPlayerChoice() {
-    let choice = parseInt(prompt("Choose 1 for rock, 2 for paper and 3 for scissors."));
+    const choice = parseInt(prompt("Choose 1 for rock, 2 for paper and 3 for scissors."));
     if (choice >= 0 && choice <= 3){
         return getChoice(choice);
     }
@@ -28,6 +28,55 @@ function getPlayerChoice() {
     }
 }
 
-function playRound(playerSelection, computerSelection){
+function playRound(){
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
 
+    switch (playerSelection){
+        case "rock":
+            if (computerSelection == "rock"){
+                const result = console.log("Draw!");
+                break;
+            }
+            
+            else if (computerSelection == "paper"){
+                const result = console.log("Computer wins!");
+                break;
+            }
+            
+            else {
+                const result = console.log ("You won!");
+                break;
+            }
+        case "paper":
+            if (computerSelection == "rock"){
+                const result = console.log("You won!");
+                break;
+            }
+
+            else if (computerSelection == "paper"){
+                const result = console.log("Draw!");
+                break;
+            }
+
+            else {
+                const result = console.log("Computer wins!");
+                break;
+            }
+        case "scissors":
+            if (computerSelection == "rock"){
+                const result = console.log("Computer wins!");
+                break;
+            }
+
+            else if (computerSelection == "paper"){
+                const result = console.log("You won!");
+            }
+
+            else {
+                const result = console.log("Draw!");
+                break;
+            }
+    }
 }
+playRound();
