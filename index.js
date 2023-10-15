@@ -12,33 +12,33 @@ function playRound(playerSelection, computerSelection){
         case 1:
 
             if (computerSelection == 1){
-                return "Draw";
+                return "Draw, no points!";
             }
             
             else if (computerSelection == 2){
                 computerPoints++;
-                return "Computer wins!";
+                return "Point for computer!";
             }
             
             else {
                 playerPoints++;
-                return "You won!";
+                return "Point for you!";
             }
 
         case 2:
 
             if (computerSelection == 1){
                 playerPoints++;
-                return "You won!";  
+                return "Point for you!";  
             }
 
             else if (computerSelection == 2){
-                return "Draw!";
+                return "Draw, no points!";
             }
 
             else {
                 computerPoints++;
-                return "Computer wins!";
+                return "Point for computer!";
                 
             }
 
@@ -46,18 +46,18 @@ function playRound(playerSelection, computerSelection){
 
             if (computerSelection == 3){
                 computerPoints++;
-                return "Computer wins!";
+                return "Point for computer!";
                 
             }
 
             else if (computerSelection == 2){
                 playerPoints++;
-                return "You won!";
+                return "Point for you!";
                 
             }
 
             else {
-                return "Draw!";
+                return "Draw, no points!";
             }
     }
 }
@@ -73,7 +73,7 @@ function game(){
         if (playerSelection > 0 && playerSelection < 4){
             console.log(playRounds);
         }
-        
+
         else {
             console.error("number not in 1, 2 or 3");
             break;
@@ -94,4 +94,3 @@ function game(){
 }
 
 game();
-
