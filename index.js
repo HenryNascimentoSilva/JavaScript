@@ -46,6 +46,7 @@ function playRound(playerSelection, computerSelection) {
 const playerScore = document.getElementById("player-score");
 const computerScore = document.getElementById("computer-score");
 const buttons = document.querySelectorAll("button");
+const results = document.querySelector('.results');
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -62,8 +63,13 @@ buttons.forEach((button) => {
 
     if (result.includes("Point for you!")) {
       playerScore.textContent = playerPoints;
+      results.textContent = "Point for you!";
     } else if (result.includes("Point for computer!")) {
       computerScore.textContent = computerPoints;
+      results.textContent = "Point for computer!";
+    }
+    else {
+      results.textContent = "Draw!";
     }
   });
 });
