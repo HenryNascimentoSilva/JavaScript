@@ -63,34 +63,35 @@ function playRound(playerSelection, computerSelection){
 }
 
 
-function game(){
-    for(let i = 0; i < 5; i++){
+const playerScore = document.getElementById("player-score");
+const computerScore = document.getElementById("computer-score");
+const buttons = document.querySelectorAll('button');
 
-        playerSelection = parseInt(prompt("Rock, Paper, Scissors! \n Choose -1(Rock), 2-(Paper), 3-(Scissors)"));
-        computerSelection = getComputerChoice();
-        playRounds = playRound(playerSelection, computerSelection);
+buttons.forEach((button) => {
 
-        if (playerSelection > 0 && playerSelection < 4){
-            console.log(playRounds);
+    button.addEventListener('click', () => {
+        if (button.id == 1){
+            playerSelection = 1;
         }
 
-        else {
-            console.error("number not in 1, 2 or 3");
-            break;
+        else if (button.id == 2){
+            playerSelection = 2;
         }
-    }
 
-    if (playerPoints > computerPoints) {
-        console.log("You have won the computer!");;
-    }
+        else{
+            playerSelection = 3;
+        }
 
-    else if (computerPoints > playerPoints) {
-        console.log("The computer has won!");
-    }
+        let computerSelection = getComputerChoice();
+        const result = (playRound(playerSelection, computerSelection));
 
-    else {
-        console.log("Draw!");
-    }
-}
+        if (result.includes("Point for you!")) {
+            playerScore.textContent = playerPoints;
+        } else if (result.includes("Point for computer!")) {
+            computerScore.textContent = computerPoints;
+        }
 
-game();
+        console.log(result);
+      });
+
+});
