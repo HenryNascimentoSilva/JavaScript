@@ -2,6 +2,7 @@ body {
     background-color: rgb(58, 58, 58);
     color: white;
     font-size: 2vw;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -30,8 +31,16 @@ body {
 button {
     font-size: 2vw;
     border: none;
-    border-radius: 8px;
-    padding: 0px 10px 0px 10px;
-    margin-left: 6px;
-    margin-right: 6px;
+    border-radius: 6px;
+    padding: 0px 12px;
+    margin: 0px 12px;
+}
+
+.footer {
+    background-color:rgb(54, 52, 52);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
