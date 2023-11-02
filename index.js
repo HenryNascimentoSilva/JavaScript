@@ -60,7 +60,7 @@ buttons.forEach((button) => {
 
     let computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
-
+    
     if (result.includes("Point for you!")) {
       playerScore.textContent = playerPoints;
       results.textContent = "Point for you!";
@@ -70,6 +70,16 @@ buttons.forEach((button) => {
     }
     else {
       results.textContent = "Draw!";
+    }
+
+    if (playerPoints == 5){
+      alert("You Won!");
+      location.reload();
+    }
+
+    else if (computerPoints == 5){
+      alert("You lost!");
+      location.reload();
     }
   });
 });
