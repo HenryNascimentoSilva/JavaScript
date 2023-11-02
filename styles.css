@@ -1,4 +1,37 @@
 body {
     background-color: rgb(58, 58, 58);
     color: white;
+    font-size: 2vw;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.results-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    margin-bottom: 12px;
+}
+
+.results {
+    margin-bottom: 12px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    font-size: 2vw;
+    border: none;
+    border-radius: 8px;
+    padding: 0px 10px 0px 10px;
+    margin-left: 6px;
+    margin-right: 6px;
 }
