@@ -1,7 +1,8 @@
 body {
     background-color: rgb(58, 58, 58);
-    color: white;
+    color: rgb(236, 235, 235);
     font-size: 2vw;
+    text-shadow: 1px 0 black;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -16,11 +17,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction:column;
-    margin-bottom: 12px;
+    margin: 24px;
 }
 
 .results {
-    margin-bottom: 12px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 .button-container {
@@ -29,11 +32,13 @@ body {
 }
 
 button {
+    background-color:rgb(54, 52, 52);
     font-size: 2vw;
     border: none;
     border-radius: 6px;
-    padding: 0px 12px;
+    padding: 6px 12px;
     margin: 0px 12px;
+    color: rgb(236, 235, 235);
 }
 
 .footer {

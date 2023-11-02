@@ -46,7 +46,7 @@ function playRound(playerSelection, computerSelection) {
 const playerScore = document.getElementById("player-score");
 const computerScore = document.getElementById("computer-score");
 const buttons = document.querySelectorAll("button");
-const results = document.querySelector('.results');
+const results = document.querySelector('.title');
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
